@@ -6,7 +6,7 @@ const mongoURL = process.env.DB_URL;
 const app = require("./app");
 
 console.log(mongoURL);
-
+mongoose.set("strictQuery", false);
 mongoose
   .connect(mongoURL, {
     useUnifiedTopology: true,

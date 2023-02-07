@@ -9,5 +9,9 @@ router
   .post(authController.protect, taskController.create)
   .get(authController.protect, taskController.getAll);
 
-router.route("/:id").get(authController.protect, taskController.update);
+router
+  .route("/:id")
+  .get(authController.protect, taskController.update)
+  .delete(authController.protect, taskController.delete)
+  .put(authController.protect, taskController.update);
 module.exports = router;
